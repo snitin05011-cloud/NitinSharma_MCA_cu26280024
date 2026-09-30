@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><title>Q14 Range</title></head><body>
+<form>
+<label>Age: <input type="range" min="1" max="100" value="25" id="age"></label>
+<span id="ageValue">25 years</span><br><br>
+<label>Weight: <input type="number" min="1" id="weight"></label> kg
+</form>
+<script>
+const age=document.getElementById('age'), out=document.getElementById('ageValue');
+age.addEventListener('input',()=>out.textContent=age.value+' years');
+</script>
+</body></html>

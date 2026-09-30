@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html><head><title>Q20 Multi Step</title><style>
+.step{max-width:400px;margin:30px auto}.s2{display:none}button{padding:8px}
+</style></head><body><div class="step">
+<section class="s1"><h2>Step 1</h2><input placeholder="Name"><br><br><button onclick="next()">Next</button></section>
+<section class="s2"><h2>Step 2</h2><input placeholder="Email"><br><br><button onclick="back()">Back</button><button>Finish</button></section>
+</div><script>
+function next(){document.querySelector('.s1').style.display='none';document.querySelector('.s2').style.display='block'}
+function back(){document.querySelector('.s2').style.display='none';document.querySelector('.s1').style.display='block'}
+</script></body></html>

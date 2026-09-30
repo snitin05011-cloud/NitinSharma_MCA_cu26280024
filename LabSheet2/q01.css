@@ -1,0 +1,5 @@
+.form{width:350px;margin:40px auto;padding:25px;background:#dcdfd5;border-radius:10px}
+label{display:block;margin-top:12px;font-weight:bold}
+input,select,textarea{width:100%;padding:9px;margin-top:5px;box-sizing:border-box}
+input[type=radio],input[type=checkbox]{width:auto}
+button{margin-top:15px;padding:10px 20px}
