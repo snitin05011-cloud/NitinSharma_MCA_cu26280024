@@ -1,0 +1,16 @@
+QUESTION 18: Test Apache logs and basic performance
+
+Typical XAMPP log locations:
+- C:\xampp\apache\logs\access.log
+- C:\xampp\apache\logs\error.log
+
+Steps:
+1. Start Apache and visit http://localhost/ several times.
+2. Open access.log. Each request should add a line containing client, time, request, status, and size.
+3. Request a missing page such as http://localhost/does-not-exist.php and check the access log for status 404.
+4. To test error logging, temporarily use a PHP page that triggers a controlled warning, with logging enabled. Avoid exposing errors publicly.
+5. On Windows PowerShell, inspect recent entries:
+   Get-Content C:\\xampp\\apache\\logs\\access.log -Tail 20
+   Get-Content C:\\xampp\\apache\\logs\\error.log -Tail 20
+6. For a simple response-time test, use browser Developer Tools > Network and compare repeated requests.
+Do not run heavy load tests on a production server.

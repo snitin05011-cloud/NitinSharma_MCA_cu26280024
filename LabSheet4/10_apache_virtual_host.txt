@@ -1,0 +1,25 @@
+QUESTION 10: Configure an Apache virtual host on Windows/XAMPP
+
+1. Create project folder: C:\xampp\htdocs\collegeweb
+2. Edit C:\xampp\apache\conf\extra\httpd-vhosts.conf and add:
+
+<VirtualHost *:80>
+    ServerName collegeweb.local
+    DocumentRoot "C:/xampp/htdocs/collegeweb"
+    <Directory "C:/xampp/htdocs/collegeweb">
+        Require all granted
+        AllowOverride All
+    </Directory>
+    ErrorLog "logs/collegeweb-error.log"
+    CustomLog "logs/collegeweb-access.log" common
+</VirtualHost>
+
+3. Ensure httpd-vhosts.conf is included in C:\xampp\apache\conf\httpd.conf:
+   Include conf/extra/httpd-vhosts.conf
+
+4. Edit C:\Windows\System32\drivers\etc\hosts as Administrator and add:
+   127.0.0.1 collegeweb.local
+
+5. Put an index.php or index.html inside the collegeweb folder.
+6. Restart Apache and visit http://collegeweb.local.
+7. If enabling virtual hosts changes localhost behavior, add a separate localhost VirtualHost too.

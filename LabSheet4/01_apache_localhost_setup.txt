@@ -1,0 +1,15 @@
+QUESTION 1: Configure and verify Apache locally
+
+Steps (XAMPP on Windows):
+1. Install XAMPP from https://www.apachefriends.org/.
+2. Open XAMPP Control Panel and click Start beside Apache.
+3. Open http://localhost in your browser. The XAMPP dashboard or default page should appear.
+4. To test your own page, create C:\xampp\htdocs\index.html containing:
+
+<!DOCTYPE html>
+<html><head><title>Apache Test</title></head>
+<body><h1>Apache is working!</h1></body></html>
+
+5. Visit http://localhost/index.html.
+
+If Apache does not start, check whether another service is using ports 80 or 443.
