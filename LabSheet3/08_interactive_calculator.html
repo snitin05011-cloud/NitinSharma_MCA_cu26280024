@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Calculator</title>
+<style>body{font-family:Arial;max-width:320px;margin:30px auto}#display{width:96%;font-size:1.4rem;margin-bottom:8px}.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}button{padding:12px}</style>
+</head><body><h2>Calculator</h2>
+<input id="display" aria-label="Calculator display" readonly>
+<div class="keys">
+<button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button><button data-value="/">÷</button>
+<button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button><button data-value="*">×</button>
+<button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button><button data-value="-">−</button>
+<button data-value="0">0</button><button data-value=".">.</button><button id="equals">=</button><button data-value="+">+</button>
+<button id="clear" style="grid-column:span 4">Clear</button></div>
+<script>
+const display = document.getElementById("display");
+document.querySelectorAll("[data-value]").forEach(button => {
+  button.addEventListener("click", () => display.value += button.dataset.value);
+});
+document.getElementById("clear").addEventListener("click", () => display.value = "");
+document.getElementById("equals").addEventListener("click", () => {
+  // Only allow digits, decimal points, arithmetic operators, and spaces.
+  if (!/^[0-9+\-*/.() ]+$/.test(display.value)) { display.value = "Invalid"; return; }
+  try {
+    const result = Function(`"use strict"; return (${display.value})`)();
+    display.value = Number.isFinite(result) ? result : "Error";
+  } catch { display.value = "Error"; }
+});
+</script></body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Create DOM Elements</title></head><body>
+<h2>Add Items to List</h2><input id="itemText" placeholder="Type an item">
+<button id="add">Add item</button><ul id="items"></ul>
+<script>
+document.getElementById("add").addEventListener("click", () => {
+  const input = document.getElementById("itemText");
+  const value = input.value.trim();
+  if (!value) return;
+  const li = document.createElement("li");
+  li.textContent = value; // textContent avoids interpreting input as HTML
+  document.getElementById("items").appendChild(li);
+  input.value = "";
+});
+</script></body></html>

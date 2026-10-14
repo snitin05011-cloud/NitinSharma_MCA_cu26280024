@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Closure Counter</title></head><body>
+<h2>Private Counter Using Closure</h2><p id="count">0</p>
+<button id="inc">Increment</button><button id="dec">Decrement</button>
+<script>
+function createCounter() {
+  let count = 0; // Private: only methods below can access it
+  return {
+    increment() { count++; return count; },
+    decrement() { count--; return count; },
+    value() { return count; }
+  };
+}
+const counter = createCounter();
+const output = document.getElementById("count");
+document.getElementById("inc").addEventListener("click", () => output.textContent = counter.increment());
+document.getElementById("dec").addEventListener("click", () => output.textContent = counter.decrement());
+</script></body></html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Student Object</title></head><body>
+<h2>Student Object and this</h2><p id="result"></p>
+<script>
+const student = {
+  name: "Aarav",
+  rollNumber: 12,
+  marks: 86,
+  describe() {
+    return `${this.name} (Roll No. ${this.rollNumber}) scored ${this.marks} marks.`;
+  },
+  hasPassed() { return this.marks >= 40; }
+};
+document.getElementById("result").textContent =
+  student.describe() + ` Passed: ${student.hasPassed()}`;
+</script></body></html>

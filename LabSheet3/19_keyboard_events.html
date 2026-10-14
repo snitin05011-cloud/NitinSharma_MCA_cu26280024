@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Keyboard Events</title></head><body>
+<h2>Keyboard Event Viewer</h2><p>Press any key while this page is focused.</p>
+<p id="down">Key down: —</p><p id="up">Key up: —</p>
+<script>
+document.addEventListener("keydown", event => {
+  document.getElementById("down").textContent =
+    `Key down: ${event.key} | Code: ${event.code} | Key code: ${event.keyCode}`;
+});
+document.addEventListener("keyup", event => {
+  document.getElementById("up").textContent =
+    `Key up: ${event.key} | Code: ${event.code} | Key code: ${event.keyCode}`;
+});
+</script></body></html>

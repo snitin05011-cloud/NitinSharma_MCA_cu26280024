@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Image Gallery Slider</title>
+<style>body{text-align:center;font-family:Arial}img{width:min(80vw,500px);height:300px;object-fit:cover;display:block;margin:15px auto}</style></head><body>
+<h2>Image Gallery</h2><img id="photo" alt="Gallery image">
+<button id="prev">Previous</button><button id="next">Next</button><p id="caption"></p>
+<script>
+// Public sample images; replace these URLs with your own image paths if desired.
+const images = [
+  {src:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900", caption:"Landscape"},
+  {src:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900", caption:"Mountain lake"},
+  {src:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900", caption:"Mountain view"}
+];
+let index = 0;
+function showImage() {
+  document.getElementById("photo").src = images[index].src;
+  document.getElementById("caption").textContent = images[index].caption;
+}
+document.getElementById("prev").addEventListener("click", () => { index = (index - 1 + images.length) % images.length; showImage(); });
+document.getElementById("next").addEventListener("click", () => { index = (index + 1) % images.length; showImage(); });
+showImage();
+</script></body></html>

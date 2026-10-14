@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Arithmetic Operations</title></head><body>
+<h2>Arithmetic Operations</h2>
+<p>Open the page and enter two numbers in the prompt dialogs.</p>
+<script>
+const a = Number(prompt("Enter first number:"));
+const b = Number(prompt("Enter second number:"));
+const results = {
+  Addition: a + b,
+  Subtraction: a - b,
+  Multiplication: a * b,
+  Division: b !== 0 ? a / b : "Cannot divide by zero"
+};
+for (const [operation, result] of Object.entries(results)) {
+  console.log(`${operation}: ${result}`);
+  alert(`${operation}: ${result}`);
+}
+</script></body></html>

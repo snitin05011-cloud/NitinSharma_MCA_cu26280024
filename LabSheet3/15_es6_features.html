@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>ES6 Features</title></head><body>
+<h2>Arrow Functions, Template Literals and Destructuring</h2><p id="result"></p>
+<script>
+const student = { name: "Meera", marks: 92 };
+const { name, marks } = student;              // Destructuring
+const makeMessage = (n, m) => `${n} scored ${m} marks.`; // Arrow function + template literal
+document.getElementById("result").textContent = makeMessage(name, marks);
+</script></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Callback and setTimeout</title></head><body>
+<h2>Callback and Asynchronous Behavior</h2><button id="start">Start</button><p id="result"></p>
+<script>
+function greet(name, callback) {
+  document.getElementById("result").textContent = `Hello, ${name}. Waiting for callback...`;
+  setTimeout(() => callback(`Welcome, ${name}! This message appeared after 2 seconds.`), 2000);
+}
+document.getElementById("start").addEventListener("click", () => {
+  greet("Student", message => {
+    document.getElementById("result").textContent = message;
+  });
+});
+</script></body></html>

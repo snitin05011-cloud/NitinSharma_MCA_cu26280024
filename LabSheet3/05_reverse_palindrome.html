@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Reverse and Palindrome</title></head><body>
+<h2>Reverse String and Check Palindrome</h2>
+<input id="word" type="text" placeholder="Enter a word or phrase">
+<button id="check">Check</button><p id="result"></p>
+<script>
+function reverseAndCheck(text) {
+  const normalized = text.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const reversed = [...text].reverse().join("");
+  return { reversed, palindrome: normalized === [...normalized].reverse().join("") };
+}
+document.getElementById("check").addEventListener("click", () => {
+  const answer = reverseAndCheck(document.getElementById("word").value);
+  document.getElementById("result").textContent =
+    `Reversed: ${answer.reversed} | ${answer.palindrome ? "Palindrome" : "Not a palindrome"}`;
+});
+</script></body></html>

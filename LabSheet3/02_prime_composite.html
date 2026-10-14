@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Prime or Composite</title></head><body>
+<h2>Prime or Composite Checker</h2>
+<input id="number" type="number" placeholder="Enter an integer">
+<button id="check">Check</button><div id="result"></div>
+<script>
+document.getElementById("check").addEventListener("click", () => {
+  const n = Number(document.getElementById("number").value);
+  const out = document.getElementById("result");
+  if (!Number.isInteger(n) || n < 2) {
+    out.textContent = "Enter an integer greater than or equal to 2. (Numbers below 2 are neither prime nor composite.)";
+    return;
+  }
+  let prime = true;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) { prime = false; break; }
+  }
+  out.textContent = prime ? `${n} is prime.` : `${n} is composite.`;
+});
+</script></body></html>

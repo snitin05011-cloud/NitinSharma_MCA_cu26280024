@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Array Manipulation</title></head><body>
+<h2>Array Methods Demo</h2><pre id="result"></pre>
+<script>
+const numbers = [12, 5, 8, 20, 3];
+numbers.push(15);                       // Add an item
+const removed = numbers.pop();          // Remove the last item
+const sorted = [...numbers].sort((a,b) => a-b);
+const doubled = numbers.map(n => n * 2);
+const greaterThanTen = numbers.filter(n => n > 10);
+document.getElementById("result").textContent =
+  `Original after push/pop: ${numbers.join(", ")}\nRemoved by pop: ${removed}` +
+  `\nSorted: ${sorted.join(", ")}\nDoubled using map: ${doubled.join(", ")}` +
+  `\nValues greater than 10 using filter: ${greaterThanTen.join(", ")}`;
+</script></body></html>
